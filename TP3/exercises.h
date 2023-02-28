@@ -3,6 +3,7 @@
 #ifndef DA_TP3_CLASSES_EXERCISES_H
 #define DA_TP3_CLASSES_EXERCISES_H
 
+using namespace std;
 // Ex 1
 bool changeMakingGR(unsigned int C[], unsigned int Stock[], unsigned int n, unsigned int T, unsigned int usedCoins[]);
 
