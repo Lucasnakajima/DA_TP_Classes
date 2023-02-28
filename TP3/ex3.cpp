@@ -5,8 +5,16 @@
 #include <algorithm>
 
 double minimumAverageCompletionTime(std::vector<unsigned int> tasks, std::vector<unsigned int> &orderedTasks) {
-    // TODO
-    return 0.0;
+    sort(tasks.begin(), tasks.end());
+    orderedTasks = tasks;
+    int sum=0;
+    int t=0;
+    for(int i=0; i<tasks.size();i++){
+        t+=tasks[i];
+        sum= sum + t;
+    }
+    double res = double(sum)/double(tasks.size());
+    return res;
 }
 
 /// TESTS ///
