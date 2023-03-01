@@ -5,8 +5,22 @@
 #include <algorithm>
 
 double fractionalKnapsackGR(unsigned int values[], unsigned int weights[], unsigned int n, unsigned int maxWeight, double usedItems[]) {
-    // TODO
-    return 0.0;
+    double sum = 0.0;
+    for(int i=0; i<n; i++){
+    if(maxWeight>=weights[i]){
+        usedItems[i]=1;
+        maxWeight = maxWeight - weights[i];
+        sum = sum + double(values[i]);
+    }
+    else{
+        double percent = double(maxWeight)/double(weights[i]);
+        usedItems[i]=percent;
+        maxWeight = maxWeight - (weights[i]*percent);
+        sum = sum + (double(values[i])*percent);
+
+    }
+    }
+    return sum;
 }
 
 /// TESTS ///
